@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { increment, decrement } from '../store/actions'
+import { increment, decrement } from '../actions/counter'
 import { connect } from 'react-redux'
 
 class Counter extends Component {
@@ -29,7 +29,7 @@ class Counter extends Component {
   }
 }
 
-const mapStateTpProps = state => {
+const mapStateToProps = state => {
   console.log('mapStateTpProps', state)
   return {
     count: state.counter
@@ -51,4 +51,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateTpProps, mapDispatchToProps)(Counter)
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)
